@@ -1,3 +1,20 @@
+<script lang="ts" context="module">
+	import type { UserSession } from 'src/hooks/session';
+
+	export const load: (props: { session: UserSession }) => {} = async ({ session }) => {
+		if (session.authenticated) {
+			return {
+				status: 301,
+				redirect: '/'
+			};
+		}
+
+		return {
+			props: {}
+		};
+	};
+</script>
+
 <div class="container">
 	<h1>Sign In</h1>
 	<form>
