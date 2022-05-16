@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import type { UserSession } from 'src/hooks/session';
+	import type { UserSession } from 'src/hooks';
 
 	export const load: (props: { session: UserSession }) => {} = async ({ session }) => {
 		if (!session.authenticated) {
