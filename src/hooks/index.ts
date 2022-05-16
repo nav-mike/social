@@ -4,17 +4,19 @@ export type UserSession = {
 	authenticated: boolean;
 };
 
-export const getSession: (props: {
-	headers: Headers & { cookie: string };
-}) => Promise<UserSession> = async ({ headers }) => {
-	const cookies = cookie.parse(headers.cookie || '');
+export const getSession: (props: { headers: Request }) => Promise<UserSession> = async ({
+	request
+}) => {
+	const { headers } = request;
+	const cookies = cookie.parse(headers.get('cookie') || '');
 
 	try {
+		// console.log(cookies);
 		if (cookies.sessionid) {
 			// const { sessionid } = cookies;
 
 			return {
-				authenticated: false
+				authenticated: true
 			};
 		}
 	} catch (error) {
