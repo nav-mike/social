@@ -16,7 +16,12 @@
 		/>
 	</div>
 	<slot />
-	<div>sidebar</div>
+	<div class="sidebar">
+		<div>search</div>
+		<div>Trends for you</div>
+		<div>Who to follow</div>
+		<footer>footer</footer>
+	</div>
 </div>
 
 <style>
@@ -32,6 +37,11 @@
 	.navbar {
 		min-height: 100vh;
 
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.sidebar {
 		display: grid;
 		grid-template-columns: 1fr;
 	}
