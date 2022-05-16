@@ -37,7 +37,6 @@
 		grid-template-columns: 1fr;
 
 		background-color: rgb(47, 51, 54);
-		/* padding: 0 20px 20px 20px; */
 		border-radius: 20px;
 	}
 	.users {
@@ -49,6 +48,11 @@
 	.show-more {
 		color: rgb(29, 155, 240);
 		text-decoration: none;
-		padding: 0 20px;
+		padding: 10px 20px;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+	}
+	.show-more:hover {
+		background-color: rgb(59, 64, 68);
 	}
 </style>

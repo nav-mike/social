@@ -1,4 +1,5 @@
 <script>
+	import Footer from '../lib/components/Footer.svelte';
 	import WhoFollowList from '../lib/components/WhoFollowList.svelte';
 </script>
 
@@ -24,7 +25,7 @@
 		<div>search</div>
 		<div>Trends for you</div>
 		<WhoFollowList />
-		<footer>footer</footer>
+		<Footer />
 	</div>
 </div>
 
