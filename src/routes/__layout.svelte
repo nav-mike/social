@@ -1,3 +1,7 @@
+<script>
+	import WhoFollowList from '../lib/components/WhoFollowList.svelte';
+</script>
+
 <div class="main-container">
 	<div class="navbar">
 		<i class="fa-brands fa-twitter" />
@@ -19,7 +23,7 @@
 	<div class="sidebar">
 		<div>search</div>
 		<div>Trends for you</div>
-		<div>Who to follow</div>
+		<WhoFollowList />
 		<footer>footer</footer>
 	</div>
 </div>
