@@ -1,6 +1,26 @@
-<script>
+<script lang="ts" context="module">
+	import type { TwitterUserInterface } from '../lib/models/TwitterUserInterface';
+
+	export const load = async () => {
+		let users: TwitterUserInterface[] = [];
+
+		for (let i = 0; i < 3; i++) {
+			const response = await fetch('https://randomuser.me/api/');
+			const data = await response.json();
+			users = [...users, data.results[0]];
+		}
+
+		return {
+			props: { users }
+		};
+	};
+</script>
+
+<script lang="ts">
 	import Footer from '../lib/components/Footer.svelte';
 	import WhoFollowList from '../lib/components/WhoFollowList.svelte';
+
+	export let users: TwitterUserInterface[] = [];
 </script>
 
 <div class="main-container">
@@ -24,7 +44,7 @@
 	<div class="sidebar">
 		<div>search</div>
 		<div>Trends for you</div>
-		<WhoFollowList />
+		<WhoFollowList {users} />
 		<Footer />
 	</div>
 </div>

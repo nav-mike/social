@@ -1,17 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { TwitterUserInterface } from '../models/TwitterUserInterface';
 	import UserCard from './UserCard.svelte';
 
-	let users: TwitterUserInterface[] = [];
-
-	onMount(async () => {
-		for (let i = 0; i < 3; i++) {
-			const response = await fetch('https://randomuser.me/api/');
-			const data = await response.json();
-			users = [...users, data.results[0]];
-		}
-	});
+	export let users: TwitterUserInterface[] = [];
 </script>
 
 <div class="container">
