@@ -37,7 +37,7 @@
 	export let promotes: {
 		title: string;
 		domain: string;
-		tweetsCount?: number;
+		tweetsCount?: string;
 		promotedBy?: string;
 	}[] = [];
 </script>
