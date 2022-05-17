@@ -5,13 +5,9 @@
 	export let promotes: {
 		title: string;
 		domain: string;
-		tweetsCount?: number;
+		tweetsCount?: string;
 		promotedBy?: string;
 	}[] = [];
 </script>
 
-<List
-	items={promotes.map((item) => ({ title: item.title }))}
-	title="Trends for you"
-	component={PromoteItem}
-/>
+<List items={promotes} title="Trends for you" component={PromoteItem} />
