@@ -3,6 +3,18 @@
 
 	export const load = async () => {
 		let users: TwitterUserInterface[] = [];
+		const promotes = [
+			{ title: 'Azovstal', tweetsCount: '183K', domain: 'Politics - Trending' },
+			{ title: 'JavaScript', tweetsCount: '37.9K', domain: 'Technology - Trending' },
+			{ title: 'Finland and Sweden', tweetsCount: '58.6K', domain: 'Politics - Trending' },
+			{ title: '#FortniteChapter3', tweetsCount: '1,774', domain: 'Gaming - Tranding' },
+			{ title: 'F-35', tweetsCount: '8,423', domain: 'Politics - Tranding' },
+			{ title: '#PlayStation', tweetsCount: '6,864', domain: 'Gaming - Tranding' },
+			{ title: 'Pietarissa', domain: 'Tranding in Finland' },
+			{ title: 'Turkissa', domain: 'Tranding in Finland' },
+			{ title: '#natokeskustelu', domain: 'Tranding in Finland' },
+			{ title: 'Musk', tweetsCount: '183K', domain: 'Trending in Finland' }
+		];
 
 		for (let i = 0; i < 3; i++) {
 			const response = await fetch('https://randomuser.me/api/');
@@ -11,7 +23,7 @@
 		}
 
 		return {
-			props: { users }
+			props: { users, promotes }
 		};
 	};
 </script>
@@ -19,8 +31,15 @@
 <script lang="ts">
 	import Footer from '../lib/components/Footer.svelte';
 	import WhoFollowList from '../lib/components/WhoFollowList.svelte';
+	import Promotes from '../lib/components/Promotes.svelte';
 
 	export let users: TwitterUserInterface[] = [];
+	export let promotes: {
+		title: string;
+		domain: string;
+		tweetsCount?: number;
+		promotedBy?: string;
+	}[] = [];
 </script>
 
 <div class="main-container">
@@ -43,7 +62,7 @@
 	<slot />
 	<div class="sidebar">
 		<div>search</div>
-		<div>Trends for you</div>
+		<Promotes {promotes} />
 		<WhoFollowList {users} />
 		<Footer />
 	</div>
