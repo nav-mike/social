@@ -19,6 +19,7 @@
 <style>
 	.container {
 		display: flex;
+		flex: 1;
 		text-decoration: none;
 		color: white;
 		justify-content: center;
