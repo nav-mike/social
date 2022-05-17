@@ -1,4 +1,7 @@
 <script lang="ts">
+	import List from './List.svelte';
+	import PromoteItem from './PromoteItem.svelte';
+
 	export let promotes: {
 		title: string;
 		domain: string;
@@ -7,6 +10,8 @@
 	}[] = [];
 </script>
 
-<div>
-	<h3>Trends for you ({promotes.length})</h3>
-</div>
+<List
+	items={promotes.map((item) => ({ title: item.title }))}
+	title="Trends for you"
+	component={PromoteItem}
+/>
