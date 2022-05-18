@@ -44,16 +44,16 @@
 
 <div class="main-container">
 	<div class="navbar">
-		<i class="fa-brands fa-twitter" />
-		<i class="fa-solid fa-house" />
-		<i class="fa-solid fa-hashtag" />
-		<i class="fa-regular fa-bell" />
-		<i class="fa-regular fa-envelope" />
-		<i class="fa-regular fa-bookmark" />
-		<i class="fas fa-list" />
-		<i class="fas fa-user" />
-		<i class="fa-regular fa-circle-question" />
-		<i class="fa-regular fa-pen-to-square" />
+		<i class="fa-brands fa-twitter fa-2xl" />
+		<i class="fa-solid fa-house fa-xl" />
+		<i class="fa-solid fa-hashtag fa-xl" />
+		<i class="fa-regular fa-bell fa-xl" />
+		<i class="fa-regular fa-envelope fa-xl" />
+		<i class="fa-regular fa-bookmark fa-xl" />
+		<i class="fas fa-list fa-xl" />
+		<i class="fas fa-user fa-xl" />
+		<i class="fa-regular fa-circle-question fa-xl" />
+		<i class="fa-regular fa-pen-to-square fa-2xl" />
 		<img
 			src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y"
 			alt="gravatar"
@@ -79,9 +79,15 @@
 
 	.navbar {
 		min-height: 100vh;
+		max-height: 100vh;
 
 		display: grid;
 		grid-template-columns: 1fr;
+	}
+
+	img {
+		border-radius: 50%;
+		width: 50px;
 	}
 
 	.sidebar {
