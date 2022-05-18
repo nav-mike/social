@@ -61,7 +61,6 @@
 	</div>
 	<slot />
 	<div class="sidebar">
-		<div>search</div>
 		<Promotes {promotes} />
 		<WhoFollowList {users} />
 		<Footer />

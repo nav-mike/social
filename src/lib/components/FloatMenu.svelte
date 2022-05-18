@@ -1,10 +1,18 @@
 <script lang="ts">
+	import { clickOutside } from '../clickOutside.js';
+
 	export let state: 'hidden' | 'visible' = 'hidden';
+
+	const handleClickOutside = () => {
+		state = 'hidden';
+	};
 </script>
 
-<div class={state}>
-	<slot />
-</div>
+{#if state === 'visible'}
+	<div class={state} use:clickOutside on:click_outside={handleClickOutside}>
+		<slot />
+	</div>
+{/if}
 
 <style>
 	.hidden {
