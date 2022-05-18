@@ -1,5 +1,7 @@
 <script lang="ts">
-	let state = 'hidden';
+	import FloatMenu from './FloatMenu.svelte';
+
+	let state: 'hidden' | 'visible' = 'hidden';
 
 	const handleClick = () => {
 		state = 'visible';
@@ -9,19 +11,11 @@
 <button on:click|preventDefault={handleClick}>
 	<slot name="icon" />
 </button>
-<div class={state}>
+<FloatMenu {state}>
 	<slot name="menu" />
-</div>
+</FloatMenu>
 
 <style>
-	.hidden {
-		display: none;
-	}
-
-	.visible {
-		display: block;
-	}
-
 	button {
 		color: grey;
 		padding: 10px;

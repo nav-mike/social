@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FloatMenuItem from './FloatMenuItem.svelte';
 	import ListItem from './ListItem.svelte';
 	import MenuButton from './MenuButton.svelte';
 
@@ -17,10 +18,10 @@
 	</div>
 	<MenuButton>
 		<i class="fa-solid fa-ellipsis" slot="icon" />
-		<ul slot="menu">
-			<li>Not interested in this</li>
-			<li>This trend is harmful or spammy</li>
-		</ul>
+		<svelte:fragment slot="menu">
+			<FloatMenuItem icon="far fa-frown">Not interested in this</FloatMenuItem>
+			<FloatMenuItem icon="far fa-frown">This trend is harmful or spammy</FloatMenuItem>
+		</svelte:fragment>
 	</MenuButton>
 </ListItem>
 
