@@ -32,6 +32,7 @@
 	import Footer from '../lib/components/Footer.svelte';
 	import WhoFollowList from '../lib/components/WhoFollowList.svelte';
 	import Promotes from '../lib/components/Promotes.svelte';
+	import Topbar from '$lib/components/Topbar.svelte';
 
 	export let users: TwitterUserInterface[] = [];
 	export let promotes: {
@@ -59,8 +60,11 @@
 			alt="gravatar"
 		/>
 	</div>
-	<slot />
+	<div class="main">
+		<slot />
+	</div>
 	<div class="sidebar">
+		<Topbar />
 		<Promotes {promotes} />
 		<WhoFollowList {users} />
 		<Footer />
@@ -90,8 +94,13 @@
 		width: 50px;
 	}
 
+	.main {
+		margin-top: 20px;
+	}
+
 	.sidebar {
 		display: flex;
 		flex-direction: column;
+		margin-top: 20px;
 	}
 </style>
