@@ -43,7 +43,6 @@
 	}[] = [];
 </script>
 
-<Topbar />
 <div class="main-container">
 	<div class="navbar">
 		<i class="fa-brands fa-twitter fa-2xl" />
@@ -61,32 +60,46 @@
 			alt="gravatar"
 		/>
 	</div>
-	<div class="main">
-		<slot />
+	<div class="header">
+		<Topbar />
 	</div>
-	<div class="sidebar">
-		<Promotes {promotes} />
-		<WhoFollowList {users} />
-		<Footer />
+	<div class="main">
+		<div class="content">
+			<slot />
+		</div>
+		<div class="sidebar">
+			<Promotes {promotes} />
+			<WhoFollowList {users} />
+			<Footer />
+		</div>
 	</div>
 </div>
 
 <style>
 	.main-container {
-		display: grid;
-		grid-template-columns: 0.5fr 2fr 1fr;
-
-		padding: 40px 40px;
+		padding: 0 40px;
 		background-color: black;
 		color: white;
+
+		display: flex;
 	}
 
 	.navbar {
-		min-height: 100vh;
-		max-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		min-height: 90vh;
+		max-height: 90vh;
+		justify-content: space-between;
+		position: fixed;
+		padding-top: 40px;
+	}
 
-		display: grid;
-		grid-template-columns: 1fr;
+	.header {
+		position: fixed;
+		left: 90px;
+		width: calc(100% - 177px);
+		padding: 10px 0;
+		background-color: black;
 	}
 
 	img {
@@ -95,7 +108,14 @@
 	}
 
 	.main {
-		margin-top: 20px;
+		margin: 40px;
+		display: flex;
+		width: 100%;
+	}
+
+	.content {
+		flex-grow: 1;
+		margin: 40px;
 	}
 
 	.sidebar {
