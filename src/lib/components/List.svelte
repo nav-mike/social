@@ -24,6 +24,7 @@
 		background-color: rgb(47, 51, 54);
 		border-radius: 20px;
 		margin: 7px;
+		margin-top: 30px;
 		max-width: 330px;
 	}
 

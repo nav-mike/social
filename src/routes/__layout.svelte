@@ -43,6 +43,7 @@
 	}[] = [];
 </script>
 
+<Topbar />
 <div class="main-container">
 	<div class="navbar">
 		<i class="fa-brands fa-twitter fa-2xl" />
@@ -64,7 +65,6 @@
 		<slot />
 	</div>
 	<div class="sidebar">
-		<Topbar />
 		<Promotes {promotes} />
 		<WhoFollowList {users} />
 		<Footer />
