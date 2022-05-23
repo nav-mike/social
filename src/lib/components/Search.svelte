@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Recent from './Recent.svelte';
+
 	let active: boolean = false;
 	let search: string = '';
 	let input: HTMLInputElement;
@@ -27,6 +29,9 @@
 		on:focusout={inactiveSearchHandler}
 		bind:this={input}
 	/>
+	{#if active}
+		<Recent />
+	{/if}
 	<i
 		class="far fa-times-circle"
 		class:active={active && search.length > 0}
