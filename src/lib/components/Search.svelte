@@ -29,9 +29,6 @@
 		on:focusout={inactiveSearchHandler}
 		bind:this={input}
 	/>
-	{#if active}
-		<Recent />
-	{/if}
 	<i
 		class="far fa-times-circle"
 		class:active={active && search.length > 0}
