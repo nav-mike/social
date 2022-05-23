@@ -1,5 +1,7 @@
 <script lang="ts">
 	let active: boolean = false;
+	let search: string = '';
+	let input: HTMLInputElement;
 
 	const activeSearchHandler = () => {
 		active = true;
@@ -8,6 +10,11 @@
 	const inactiveSearchHandler = () => {
 		active = false;
 	};
+
+	const clearSearchHandler = () => {
+		search = '';
+		input.focus();
+	};
 </script>
 
 <div class:active>
@@ -15,8 +22,15 @@
 	<input
 		type="text"
 		placeholder="Search Twitter"
+		bind:value={search}
 		on:focus={activeSearchHandler}
 		on:focusout={inactiveSearchHandler}
+		bind:this={input}
+	/>
+	<i
+		class="far fa-times-circle"
+		class:active={active && search.length > 0}
+		on:click={clearSearchHandler}
 	/>
 </div>
 
@@ -42,7 +56,15 @@
 	}
 
 	i.active {
-		color: rgb(29, 155, 240);
+		color: rgb(29, 155, 240) !important;
+	}
+
+	i.fa-times-circle {
+		color: rgb(47, 51, 54);
+	}
+
+	i.fa-times-circle.active {
+		cursor: pointer;
 	}
 
 	input {
